@@ -2,7 +2,7 @@ module top_module (
     input clk,
     input reset,      // Synchronous reset
     input data,
-    output [3:0] count,
+    output reg [3:0] count,
     output counting,
     output done,
     input ack );
@@ -10,7 +10,7 @@ module top_module (
     reg [3:0] state, next_state;
     reg [99:0] iteration;
     reg [99:0] cycle;
-    wire [3:0] delay;
+    reg [3:0] delay;
     
     parameter IDLE=0, S1=1, S11=2, S110=3, S1101=4, SHIFT1=5, SHIFT2=6, SHIFT3=7, COUNT=8, DONE=9;
     
